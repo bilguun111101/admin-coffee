@@ -19,9 +19,9 @@ const page_buttons = (log) => {
 
 const NavbarBtn = (props) => {
     const { icon, text, path } = props.element;
+    const { setRemove } = useLayout();
     const { index } = props;
     const { active_button, setActive_button } = useDashboard();
-    const { setRemove } = useLayout();
     const navigate = useNavigate();
     const click = () => {
         setActive_button(active_button.map((el, idx) => idx === index ? el = true : el = false));

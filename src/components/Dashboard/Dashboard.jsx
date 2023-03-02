@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { db } from '../../firebase/db';
 import Circles from '../Circles';
 import titles from "./Titles.json";
 
 export const Dashboard = () => {
+  useEffect(() => {
+    (async () => {
+      db.collection('products').onSnapshot(snapshot => {
+        console.log(snapshot.docs.map(doc => doc.data()))
+      })
+    })()
+  }, [])
   return (
     <section className='w-full h-full pl-10 pr-10 pt-10 relative overflow-hidden'>
       <Circles />

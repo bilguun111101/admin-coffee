@@ -1,5 +1,7 @@
-import React from 'react'
+import Circles from '../Circles';
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 export const SignUp = () => {
     const navigate = useNavigate();
